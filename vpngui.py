@@ -8,14 +8,14 @@ app = Flask(__name__)
 
 @app.route('/')
 def hello_world():
-    rand = str(randint(5, 69))
-    qrimg = './config/peer' + rand + '/peer' + rand + '.png'
-    config = './config/peer' + rand + '/peer' + rand + '.conf'
-    return render_template("index.html", qr = qrimg, name = "ny-"+rand, conf = config, location = "New York")
+    rand = str(randint(5, 198))
+    qrimg = '/config/peer' + rand + '/peer' + rand + '.png'
+    config = '/config/peer' + rand + '/peer' + rand + '.conf'
+    return render_template("index.html", qr = qrimg, name = "lux-"+rand, conf = config, location = "New York")
 
 @app.route('/config/<path:filename>')
 def getimage(filename):
-    return send_from_directory(app.root_path + '/config/', filename)
+    return send_from_directory('/config/', filename)
 
 if __name__ == "__main__":
     serve(app, host="0.0.0.0", port=5070)

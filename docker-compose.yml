@@ -1,0 +1,12 @@
+version: '3.9'
+
+services:
+  vpngui:
+    build:
+      context: .
+    container_name: vpngui
+    restart: unless-stopped
+    volumes:
+      - ./config:/config
+    ports:
+      - 5070:5070
